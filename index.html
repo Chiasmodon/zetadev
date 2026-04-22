@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte - ZetaDev</title>
+    <style>
+        :root {
+            --primary: #2ecc71;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Estilo Isométrico para o Card */
+        .support-card {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 10px 10px 0px rgba(44, 62, 80, 0.1);
+            width: 100%;
+            max-width: 500px;
+            border: 2px solid var(--dark);
+            transform: skewY(-1deg); /* Leve inclinação para estilo indie */
+        }
+
+        h1 {
+            color: var(--dark);
+            margin-top: 0;
+            border-bottom: 4px solid var(--primary);
+            display: inline-block;
+        }
+
+        p { color: #666; font-size: 14px; }
+
+        .form-group { margin-bottom: 20px; }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: var(--dark);
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Garante que o padding não quebre o layout */
+            font-size: 16px;
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+
+        button {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            box-shadow: 4px 4px 0px var(--dark);
+            transition: all 0.2s;
+        }
+
+        button:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--dark);
+        }
+
+        button:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px var(--dark);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="support-card">
+        <h1>ZetaDev Support</h1>
+        <p>Relate problemas técnicos ou bugs no <strong>3D Sokoban Quest</strong>.</p>
+
+        <form action="https://formsubmit.co/zetagamesdev@gmail.com" method="POST">
+            
+            <input type="hidden" name="_subject" value="Novo Relato de Bug: 3D Sokoban Quest">
+            <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+            <input type="hidden" name="_captcha" value="false">
+
+            <div class="form-group">
+                <label for="name">Seu Nome</label>
+                <input type="text" name="name" id="name" placeholder="Ex: Alan Costa" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Seu E-mail</label>
+                <input type="email" name="email" id="email" placeholder="email@exemplo.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="issue-type">Tipo de Problema</label>
+                <select name="issue-type" id="issue-type">
+                    <option value="bug">Bug Visual / Gráfico</option>
+                    <option value="gameplay">Problema na Gameplay (Travamento)</option>
+                    <option value="performance">Baixa Performance / FPS</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Descrição do Problema</label>
+                <textarea name="message" id="message" rows="5" placeholder="Descreva o que aconteceu..." required></textarea>
+            </div>
+
+            <button type="submit">ENVIAR RELATÓRIO</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeta Dev - Games Portfolio</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+            background-color: #0f0f12;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #e0e0e0;
+            background-color: #0f0f12;
+            background-image: url("Fundo.png");
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.7);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .logo {
+            max-width: 180px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        h1 {
+            font-size: 32pt;
+            margin-top: 20px;
+            color: #ffffff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .tagline {
+            color: #4da6ff;
+            font-size: 14pt;
+            margin-top: -10px;
+        }
+        .game-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 50px;
+            border-left: 5px solid #4da6ff;
+            backdrop-filter: blur(5px);
+        }
+        .game-title {
+            font-size: 24pt;
+            color: #4da6ff;
+            margin-top: 0;
+        }
+        
+        /* Estilo para as imagens clicáveis */
+        .main-img, .thumb-container img {
+            cursor: pointer;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        
+        .main-img:hover, .thumb-container img:hover {
+            transform: scale(1.02);
+            filter: brightness(1.2);
+        }
+
+        .main-img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+
+        .thumb-container {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .description {
+            line-height: 1.6;
+            font-size: 11pt;
+            margin-bottom: 20px;
+        }
+
+        /* --- ESTILOS DO MODAL (O que faltava) --- */
+        .modal {
+            display: none; /* Escondido por padrão */
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 85%;
+            border: 2px solid #4da6ff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(77, 166, 255, 0.3);
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 9pt;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <div class="container">
+            <header>
+                <img src="logo.png" alt="Zeta Dev Logo" class="logo">
+                <h1>Zeta Dev</h1>
+                <p class="tagline">Crafting Immersive Digital Worlds</p>
+            </header>
+
+            <section class="game-section">
+                <h2 class="game-title">3D Sokoban Quest</h2>
+                <div class="description">
+                    <p>Experience the classic puzzle mechanics reimagined in a stunning 3D environment. 
+                    Navigate through challenging levels, push blocks strategically, and solve intricate 
+                    spatial puzzles that will test your logic and patience.</p>
+                </div>
+                <img src="3dSokobanQuest1.png" alt="Sokoban Quest" class="main-img" onclick="openModal(this.src)">
+                <div class="thumb-container">
+                    <img src="3dSokobanQuest2.png" style="width: 150px; border-radius: 4px;" onclick="openModal(this.src)">
+                    <img src="3dSokobanQuest3.png" style="width: 150px; border-radius: 4px;" onclick="openModal(this.src)">
+                    <img src="3dSokobanQuest4.png" style="width: 150px; border-radius: 4px;" onclick="openModal(this.src)">
+                    <img src="3dSokobanQuest5.png" style="width: 150px; border-radius: 4px;" onclick="openModal(this.src)">
+                    <img src="3dSokobanQuest6.png" style="width: 150px; border-radius: 4px;" onclick="openModal(this.src)">
+                </div>
+            </section>
+
+            <section class="game-section" style="border-left-color: #ff4d4d;">
+                <h2 class="game-title" style="color: #ff4d4d;">Cubehead Odyssey</h2>
+                <div class="description">
+                    <p>Embark on an epic journey with Cubehead. This stylized adventure combines 
+                    platforming elements with unique character design and atmospheric level building. 
+                    Explore vibrant worlds and overcome obstacles in this flagship Zeta Dev title.</p>
+                </div>
+                <img src="CubeheadOdyssey2.png" alt="Cubehead Odyssey" class="main-img" onclick="openModal(this.src)">
+                <div class="thumb-container">
+                    <img src="CubeheadOdyssey1.png" style="width: 150px; border-radius: 4px;" onclick="openModal(this.src)">
+                    <img src="CubehadOdyssey3.png" style="width: 150px; border-radius: 4px;" onclick="openModal(this.src)">
+                    <img src="CubehadOdyssey4.png" style="width: 150px; border-radius: 4px;" onclick="openModal(this.src)">
+                    <img src="CubehadOdyssey5.png" style="width: 150px; border-radius: 4px;" onclick="openModal(this.src)">
+                    <img src="CubehadOdyssey6.png" style="width: 150px; border-radius: 4px;" onclick="openModal(this.src)">
+                </div>
+            </section>
+
+            <footer class="footer">
+                &copy; 2026 Zeta Dev. All Rights Reserved. Professional Game Development Studio.
+            </footer>
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal" onclick="this.style.display='none'">
+        <img class="modal-content" id="imgFull">
+    </div>
+
+    <script>
+        function openModal(src) {
+            // Mostra o modal e define a fonte da imagem
+            const modal = document.getElementById('imageModal');
+            const fullImg = document.getElementById('imgFull');
+            
+            modal.style.display = 'flex';
+            fullImg.src = src;
+        }
+    </script>
+</body>
+</html>
